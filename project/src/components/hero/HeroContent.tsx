@@ -18,8 +18,8 @@ export function HeroContent() {
         className="flex items-center gap-2 mb-6 text-[#FF6F61]" // Salmon Pink for consistency
         variants={fadeInUp}
       >
-        <Heart className="w-6 h-6" />
-        <span className="text-lg font-medium">Welcome to PledgeIt</span>
+        {/* <Heart className="w-6 h-6" /> */}
+        {/* <span className="text-lg font-medium">Welcome to PledgeIt</span> */}
       </motion.div>
 
       {/* Animated Main Header */}
