@@ -29,6 +29,10 @@ export default {
           900: '#831843',
         },
       },
+      fontFamily: {
+        gotham: ['Gotham', 'sans-serif'], // Added Gotham font
+        montserrat: ['Montserrat', 'sans-serif'], // Added Montserrat as an alternative
+      },
     },
   },
   plugins: [],
