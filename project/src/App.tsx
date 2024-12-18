@@ -7,6 +7,7 @@ import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Dashboard } from './pages/Dashboard';
 import { Events } from './pages/Events';
+import { RequireAuth } from './components/auth/Requierauth';
 
 export default function App() {
   return (
@@ -16,9 +17,16 @@ export default function App() {
         <main className="flex-1 bg-gray-50">
           <Routes>
             <Route path="/" element={<Hero />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/login/*" element={<Login />} />
+            <Route path="/register/*" element={<Register />} />
+            <Route
+              path="/dashboard"
+              element={
+                <RequireAuth>
+                  <Dashboard />
+                </RequireAuth>
+              }
+            />
             <Route path="/events" element={<Events />} />
           </Routes>
         </main>
