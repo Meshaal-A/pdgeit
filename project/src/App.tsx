@@ -7,7 +7,7 @@ import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Dashboard } from './pages/Dashboard';
 import { Events } from './pages/Events';
-import { RequireAuth } from './components/auth/Requierauth';
+import { RequireAuth } from '../src/components/auth/Requierauth';
 
 export default function App() {
   return (

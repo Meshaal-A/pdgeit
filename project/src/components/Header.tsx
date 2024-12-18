@@ -1,46 +1,43 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useStore } from "../store/useStore";
-import { Bell, User } from "lucide-react";
-import pledgeitLogo from "../pledgeit.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Heart, Bell } from 'lucide-react';
+import { UserButton } from '@clerk/clerk-react';
+import { useAuth } from '../hooks/useAuth';
 
 export function Header() {
-  const user = useStore((state) => state.user);
+  const { isAuthenticated } = useAuth();
 
   return (
-    <header className="bg-gradient-to-r to-[#f9eee8] text-[#de362e]">
+    <header className="bg-gradient-to-r from-orange-600 to-red-600 text-white">
       <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <img
-            src={pledgeitLogo}
-            alt="PledgeIt Logo"
-            className="w-12 h-10 object-contain"
-          />
+          <Heart className="w-8 h-8" />
           <span className="text-2xl font-bold">PledgeIt</span>
         </Link>
-
+        
         <div className="flex items-center space-x-6">
-          <Link to="/events" className="hover:text-[#f9eee8] transition">
+          <Link to="/events" className="hover:text-orange-200 transition">
             Events
           </Link>
-          <Link to="/leaderboard" className="hover:text-[#f9eee8] transition">
+          <Link to="/leaderboard" className="hover:text-orange-200 transition">
             Leaderboard
           </Link>
-          {user ? (
+          {isAuthenticated ? (
             <div className="flex items-center space-x-4">
-              <Bell className="w-6 h-6 cursor-pointer hover:text-[#f9eee8] transition" />
-              <Link
-                to="/profile"
-                className="flex items-center space-x-2 hover:text-[#f9eee8] transition"
-              >
-                <User className="w-6 h-6" />
-                <span>{user.name}</span>
-              </Link>
+              <Bell className="w-6 h-6 cursor-pointer hover:text-orange-200 transition" />
+              <UserButton 
+                appearance={{
+                  elements: {
+                    userButtonAvatarBox: 'w-8 h-8',
+                  },
+                }}
+                afterSignOutUrl="/"
+              />
             </div>
           ) : (
             <Link
               to="/login"
-              className="text-[#de362e] px-4 py-2 rounded-full font-medium hover:bg-[#de362e] hover:text-[#f9eee8] transition"
+              className="bg-white text-orange-600 px-4 py-2 rounded-full font-medium hover:bg-orange-100 transition"
             >
               Get Started
             </Link>
