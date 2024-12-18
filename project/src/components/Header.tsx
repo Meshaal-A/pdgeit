@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useStore } from "../store/useStore";
 import { Bell, User } from "lucide-react";
-import pledgeitLogo from "../pledgeit.png"; // Adjust the path to the logo image
+import pledgeitLogo from "../pledgeit.png";
 
 export function Header() {
   const user = useStore((state) => state.user);
@@ -10,17 +10,15 @@ export function Header() {
   return (
     <header className="bg-gradient-to-r to-[#f9eee8] text-[#de362e]">
       <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo and Text */}
         <Link to="/" className="flex items-center space-x-2">
           <img
             src={pledgeitLogo}
             alt="PledgeIt Logo"
-            className="w-12 h-10 object-contain" // Adjust size as needed
+            className="w-12 h-10 object-contain"
           />
           <span className="text-2xl font-bold">PledgeIt</span>
         </Link>
 
-        {/* Navigation Links */}
         <div className="flex items-center space-x-6">
           <Link to="/events" className="hover:text-[#f9eee8] transition">
             Events
