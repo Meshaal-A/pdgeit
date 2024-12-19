@@ -34,7 +34,7 @@ export function HeroContent() {
         variants={fadeInUp}
         custom={0.4}
       >
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6F61]  to-[#FF1493] animate-gradient">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b8291c]  to-[#ff7214] animate-gradient">
           Across Sri Lanka
         </span>
       </motion.span>
@@ -62,7 +62,7 @@ export function HeroContent() {
           className="group relative px-8 py-4 rounded-full font-medium text-white overflow-hidden"
         >
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-[#FF6F61] via-[#FF8E53] to-[#FF1493]"
+            className="absolute inset-0 bg-gradient-to-r from-[#FF6F61] via-[#f66416] to-[#eda566]"
             whileHover={{ scale: 1.1 }}
             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           />
